@@ -13,5 +13,7 @@ namespace ProjetoDesenvolvido.Repositorio.Interface
 
         ClienteModel ListarPorId(int id);
 
+        bool Apagar(int id);
+
     }
 }

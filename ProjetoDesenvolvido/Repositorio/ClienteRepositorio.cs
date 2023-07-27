@@ -24,6 +24,18 @@ namespace ProjetoDesenvolvido.Repositorio
             return cliente;
         }
 
+        public bool Apagar(int id)
+        {
+            ClienteModel clientedb = ListarPorId(id);
+
+            if (clientedb == null) throw new Exception("Houve um erro ao apagar");
+
+            _bancoContext.Clientes.Remove(clientedb);
+            _bancoContext.SaveChanges();
+
+            return true;
+        }
+
         public ClienteModel Atualizar(ClienteModel cliente)
         {
             ClienteModel clientedb = ListarPorId(cliente.Id);

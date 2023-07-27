@@ -68,21 +68,41 @@ namespace ProjetoDesenvolvido.Controllers
             }
             catch (System.Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, cliente não pode ser editado, tnte novamente, erro: {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, cliente não pode ser editado, tènte novamente, erro: {erro.Message}";
                 return RedirectToAction("Consultar");
             }
 
             return View("Editar", cliente);
         }
 
-        public IActionResult ApagarConfirmacao()
+        public IActionResult ApagarConfirmacao(int id)
         {
-            return View();
+            ClienteModel cliente = _clienetRepositorio.ListarPorId(id);
+            return View(cliente);
         }
 
-        public IActionResult Apagar()
+        public IActionResult Apagar(int id)
         {
-            return View();
+            try
+            {
+                bool apagado = _clienetRepositorio.Apagar(id);
+
+                if (apagado)
+                {
+                    TempData["MensagemSucesso"] = "Cliente alterado com sucesso";
+                }
+                else
+                {
+                    TempData["MensagemSucesso"] = "Não foi possivel apagar o cliente";
+                }
+
+                return RedirectToAction("Consultar");
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, cliente não pode ser apagado, tènte novamente, erro: {erro.Message}";
+                return RedirectToAction("Consultar");
+            }
         }
     }
 }
