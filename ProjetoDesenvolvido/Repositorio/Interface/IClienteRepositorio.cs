@@ -5,6 +5,8 @@ namespace ProjetoDesenvolvido.Repositorio.Interface
 {
     public interface IClienteRepositorio
     {
+        ClienteModel Atualizar(ClienteModel clienteModel);
+
         ClienteModel Adicionar(ClienteModel cliente);
 
         List<ClienteModel> ListarTodos();

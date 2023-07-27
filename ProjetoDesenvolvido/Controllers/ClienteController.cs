@@ -52,6 +52,29 @@ namespace ProjetoDesenvolvido.Controllers
             return View(cliente);
         }
 
+        [HttpPost]
+        public IActionResult Alterar(ClienteModel cliente)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _clienetRepositorio.Atualizar(cliente);
+                    TempData["MensagemSucesso"] = "Cliente alterado com sucesso";
+                    return RedirectToAction("Consultar");
+                }
+
+                return View(cliente);
+            }
+            catch (System.Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, cliente não pode ser editado, tnte novamente, erro: {erro.Message}";
+                return RedirectToAction("Consultar");
+            }
+
+            return View("Editar", cliente);
+        }
+
         public IActionResult ApagarConfirmacao()
         {
             return View();
