@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ClienteModel
+@{
     ViewData["Title"] = "Cadastrar Cliente";
 }
 
@@ -6,26 +7,31 @@
     <h2 class="display-4">Cadastrar o estoque de clientes no sistema</h2>
 </div>
 
-<form>
+<form asp-controller="Cliente" asp-action="Cadastrar">
   <div class="form-group">
     <label for="nome">Nome</label>
-    <input type="password" class="form-control" placeholder="Informe o nome">
+    <input type="text" class="form-control" asp-for="Nome" placeholder="Informe o nome">
+    @Html.ValidationMessageFor(x => x.Nome, null, new { @class = "field-validation-error" })
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="password" class="form-control" placeholder="Informe o Email">
+    <input type="text" class="form-control" asp-for="Email" placeholder="Informe o Email">
+    @Html.ValidationMessageFor(x => x.Email, null, new { @class = "field-validation-error" })
   </div>
   <div class="form-group">
     <label for="idade">Idade</label>
-    <input type="password" class="form-control" placeholder="Informe a idade">
+    <input type="text" class="form-control" asp-for="Idade" placeholder="Informe a idade">
+    @Html.ValidationMessageFor(x => x.Idade, null, new { @class = "field-validation-error" })
   </div>
   <div class="form-group">
     <label for="cpf">Cpf</label>
-    <input type="password" class="form-control" placeholder="Informe o cpf">
+    <input type="text" class="form-control" asp-for="Cpf" placeholder="Informe o cpf">
+    @Html.ValidationMessageFor(x => x.Cpf, null, new { @class = "field-validation-error" })
   </div>
   <div class="form-group">
     <label for="empresa">Empresa</label>
-    <input type="password" class="form-control" placeholder="Informe a Emapresa">
+    <input type="text" class="form-control" asp-for="Empresa" placeholder="Informe a Emapresa">
+    @Html.ValidationMessageFor(x => x.Empresa, null, new { @class = "field-validation-error" })
   </div>
   <button type="submit" class="btn btn-primary btn-block">Cadastrar Cliente</button>
 </form>

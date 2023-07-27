@@ -1,6 +1,8 @@
 ﻿using ProjetoDesenvolvido.Data;
 using ProjetoDesenvolvido.Models;
 using ProjetoDesenvolvido.Repositorio.Interface;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ProjetoDesenvolvido.Repositorio
 {
@@ -19,6 +21,11 @@ namespace ProjetoDesenvolvido.Repositorio
             _bancoContext.SaveChanges();
 
             return cliente;
+        }
+
+        public List<ClienteModel> ListarTodos()
+        {
+            return _bancoContext.Clientes.ToList();
         }
     }
 }
