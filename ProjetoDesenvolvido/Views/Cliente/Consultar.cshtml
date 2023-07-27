@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Consultar Cliente";
+}
+
+<div class="text-center">
+    <h2 class="display-4">Listagem do estoque de clientes no sistema</h2>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Cpf</th>
+      <th scope="col">Empresa</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>mark@gmail.com</td>
+      <td>34</td>
+      <td>1234567890</td>
+      <td>Cemig</td>
+      <td>
+          <a role="button" asp-controller="Cliente" asp-action="Editar" class="btn btn-primary">Editar</a>
+      </td>
+      <td>
+          <a role="button" asp-controller="Cliente" asp-action="ApagarConfirmacao" class="btn btn-danger">Apagar</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>jacob@gmail.com</td>
+      <td>23</td>
+      <td>0987654321</td>
+      <td>Casas Bahias</td>
+      <td>
+          <a role="button" asp-controller="Cliente" asp-action="Editar" class="btn btn-primary">Editar</a>
+      </td>
+      <td>
+          <a role="button" asp-controller="Cliente" asp-action="ApagarConfirmacao" class="btn btn-danger">Apagar</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Pedro</td>
+      <td>Pedro</td>
+      <td>31</td>
+      <td>5671234098</td>
+      <td>IBM</td>
+      <td>
+          <a role="button" asp-controller="Cliente" asp-action="Editar" class="btn btn-primary">Editar</a>
+      </td>
+      <td>
+          <a role="button" asp-controller="Cliente" asp-action="ApagarConfirmacao" class="btn btn-danger">Apagar</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
