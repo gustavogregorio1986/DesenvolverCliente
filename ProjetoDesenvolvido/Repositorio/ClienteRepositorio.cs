@@ -23,6 +23,11 @@ namespace ProjetoDesenvolvido.Repositorio
             return cliente;
         }
 
+        public ClienteModel ListarPorId(int id)
+        {
+            return _bancoContext.Clientes.FirstOrDefault(x => x.Id == id);
+        }
+
         public List<ClienteModel> ListarTodos()
         {
             return _bancoContext.Clientes.ToList();

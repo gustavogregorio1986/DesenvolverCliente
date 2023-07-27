@@ -46,12 +46,18 @@ namespace ProjetoDesenvolvido.Controllers
             return View(listaCliente);
         }
 
-        public IActionResult Editar()
+        public IActionResult Editar(int id)
+        {
+            ClienteModel cliente = _clienetRepositorio.ListarPorId(id);
+            return View(cliente);
+        }
+
+        public IActionResult ApagarConfirmacao()
         {
             return View();
         }
 
-        public IActionResult ApagarConfirmacao()
+        public IActionResult Apagar()
         {
             return View();
         }

@@ -53,7 +53,7 @@
                   <td>@cliente.Cpf</td>
                   <td>@cliente.Empresa</td>
                <td>
-                  <a role="button" asp-controller="Cliente" asp-action="Editar" class="btn btn-primary">Editar</a>
+                  <a role="button" asp-route-id="@cliente.Id" asp-controller="Cliente" asp-action="Editar" class="btn btn-primary">Editar</a>
                </td>
                <td>
                   <a role="button" asp-controller="Cliente" asp-action="ApagarConfirmacao" class="btn btn-danger">Apagar</a>

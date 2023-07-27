@@ -7,7 +7,9 @@ namespace ProjetoDesenvolvido.Repositorio.Interface
     {
         ClienteModel Adicionar(ClienteModel cliente);
 
-        List<ClienteModel> ListarTodos(); 
+        List<ClienteModel> ListarTodos();
+
+        ClienteModel ListarPorId(int id);
 
     }
 }
